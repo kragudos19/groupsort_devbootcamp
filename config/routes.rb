@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'cohorts#index'
   resources :phases
   resources :cohorts
   devise_for :users
