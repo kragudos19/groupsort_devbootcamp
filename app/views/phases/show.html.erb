@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Phase num:</strong>
+  <%= @phase.phase_num %>
+</p>
+
+<p>
+  <strong>Belongs to:</strong>
+  <%= @phase.belongs_to %>
+</p>
+
+<%= link_to 'Edit', edit_phase_path(@phase) %> |
+<%= link_to 'Back', phases_path %>
