@@ -1,14 +1,26 @@
 Rails.application.routes.draw do
 
-
-  resources :students, only: [:show, :new, :create, :edit, :delete ]
-  resources :weeks, only: [:show, :new, :create, :edit, :delete ]
-
-
   root to: 'cohorts#index'
-  resources :phases
-  resources :cohorts
+
+  resources :cohorts do
+    resources :phases, only: [:new, :create, :index]
+    resources :students, only: [:new, :create, :index]
+  end
+
+  resource :phases, only: [:show, :edit, :delete, :update] do
+    resources :weeks, only: [:new, :create, :index]
+  end
+
+  resources :weeks, only: [:show, :edit, :delete, :update] do
+    resources :groups, only: [:new, :create, :index]
+  end
+
+  resources :students, only: [:show, :edit, :delete, :update] do
+    resources :groups, only: [:index]
+  end
+
+  resource :groups, only: [:show, :edit, :delete, :update]
 
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
