@@ -1,0 +1,14 @@
+h1 Edit Student
+= form_for @student, html: { method: :put } do |f|
+  p
+    = f.label :first_name
+    = f.text_field :first_name
+  p
+    = f.label :last_name
+    = f.text_field :last_name
+  p
+    = f.label :enrollment
+    = f.check_box :enrollment
+  p
+    = f.submit
+  / = render 'students/form', :locals => { :f => f }

@@ -1,4 +1,36 @@
-h1 Cohort Students
+div
+  h1 = @cohort.name
+  h3 Enrolled Students
+  table
+    tr
+      th Student Name
+      th Edit Student
+    - @enrolled_students.each do |stud|
+      tr
+        td = stud.first_name + " " + stud.last_name
+        td = link_to 'Edit', edit_student_path(stud)
+  h3 Dis-enrolled Student
+  table
+    tr
+      th Student Name
+      th Edit Student
+    - @not_enrolled_students.each do |stud|
+      tr
+        td = stud.first_name + " " + stud.last_name
+        td = link_to 'Edit', edit_student_path(stud)
+
 
 h2 Add a student
+= form_for @student, url: 'students#create', html: { method: :post } do |f|
+  p
+    = f.label :first_name
+    = f.text_field :first_name
+  p
+    = f.label :last_name
+    = f.text_field :last_name
+  p
+    = f.submit
+  / = render 'students/form', :locals => { :f => f }
+
+
 
