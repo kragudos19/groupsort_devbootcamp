@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :location %>
-    <%= f.text_field :location %>
+    <%= f.select :location, [["San Diego", 'San Diego'], ["New York", "New York"],["Chicago", "Chicago"], ["Austin", "Austin"], ["San Francisco", "San Francisco"],["Seattle", "Seattle"], ["Washington DC", "Washington DC"]] %>
   </div>
 
   <div class="actions">
