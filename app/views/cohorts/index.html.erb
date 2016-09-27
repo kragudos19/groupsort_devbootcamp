@@ -14,11 +14,11 @@
   <tbody>
     <% @cohorts.each do |cohort| %>
       <tr>
-        <td><%= cohort.name %></td>
+        <td><%= link_to "#{cohort.name}", cohort %></td>
         <td><%= cohort.location %></td>
-        <td><%= link_to 'Show', cohort %></td>
-        <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
-        <td><%= link_to 'Destroy', cohort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit Name', edit_cohort_path(cohort) %></td>
+        <td><%= link_to 'Edit Students', cohort_students_path(cohort) %></td>
+        <td><%= link_to 'Remove Cohort', cohort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
