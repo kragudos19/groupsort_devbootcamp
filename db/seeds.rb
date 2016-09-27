@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Cohort.create(name: "Salamanders", location: "San Diego")
+Phase.create(phase_num: 3, cohort_id: 1)
+Week.create(phase_id: 1, week_number: 8)
+Group.create(week_id: 1)
+Student.create(first_name:"Ezra", last_name: "Chiang", cohort_id: 1)
+StudentGroup.create(student_id: 1, group_id: 1)
