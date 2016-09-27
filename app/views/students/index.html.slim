@@ -1,4 +1,16 @@
-h1 Cohort Students
+div
+  h1 = @cohort.name
+  table
+    tr
+      th Student Name
+      th Edit Name
+    - @students.each do |stud|
+      tr
+        td = stud.first_name + " " + stud.last_name
+        td = link_to 'Edit', edit_student_path(stud)
+
 
 h2 Add a student
+
+
 
