@@ -1,10 +1,20 @@
 div
   h1 = @cohort.name
+  h3 Enrolled Students
   table
     tr
       th Student Name
       th Edit Student
     - @enrolled_students.each do |stud|
+      tr
+        td = stud.first_name + " " + stud.last_name
+        td = link_to 'Edit', edit_student_path(stud)
+  h3 Dis-enrolled Student
+  table
+    tr
+      th Student Name
+      th Edit Student
+    - @not_enrolled_students.each do |stud|
       tr
         td = stud.first_name + " " + stud.last_name
         td = link_to 'Edit', edit_student_path(stud)
