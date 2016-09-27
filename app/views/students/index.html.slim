@@ -3,14 +3,24 @@ div
   table
     tr
       th Student Name
-      th Edit Name
-    - @students.each do |stud|
+      th Edit Student
+    - @enrolled_students.each do |stud|
       tr
         td = stud.first_name + " " + stud.last_name
         td = link_to 'Edit', edit_student_path(stud)
 
 
 h2 Add a student
+= form_for @student, url: 'students#create', html: { method: :post } do |f|
+  p
+    = f.label :first_name
+    = f.text_field :first_name
+  p
+    = f.label :last_name
+    = f.text_field :last_name
+  p
+    = f.submit
+  / = render 'students/form', :locals => { :f => f }
 
 
 

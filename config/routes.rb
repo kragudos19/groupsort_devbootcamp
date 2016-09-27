@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     end
 
     resource :groups, only: [:show, :edit, :delete, :update]
+
+    resource :phases, only: [:show, :edit, :delete, :update]
   end
 
 
