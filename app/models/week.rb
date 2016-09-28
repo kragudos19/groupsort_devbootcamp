@@ -8,8 +8,6 @@ class Week < ApplicationRecord
   has_many :students, through: :student_groups
 
   def new_groups(cohort, phase, students)
-    puts "ASDFASDFASDFSDFASDFASDDFASDFASFASDFSAFASDFSAFASDFASDFASDFASDFASDFS"
-    p self
     studentlength = students.length
     groupcount = studentlength/4
     remainder = studentlength%4
