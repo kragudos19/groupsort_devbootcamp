@@ -23,7 +23,6 @@ Rails.application.routes.draw do
 
     resource :groups, only: [:show, :edit, :delete, :update]
 
-    resource :phases, only: [:show, :edit, :delete, :update]
   end
 
   root "home#index"
