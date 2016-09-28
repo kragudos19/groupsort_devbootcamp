@@ -51,7 +51,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'groupz.herokuapp.com' }
 
   # FROM STACK OVERFLOW http://stackoverflow.com/questions/8186584/how-do-i-set-up-email-confirmation-with-devise
   # config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
