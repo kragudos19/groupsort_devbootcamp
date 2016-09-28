@@ -20,7 +20,7 @@ script:
   - bundle exec rake
 
 before_script:
-  - cp config/database.travis.yml config/database.yml
+  # - cp config/database.travis.yml config/database.yml
   # - mysql -e 'create database strano_test'
   - psql -c 'create database strano_test' -U postgres
 
