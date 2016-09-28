@@ -1,0 +1,26 @@
+# database setup for travis: http://stackoverflow.com/questions/9321153/rails-database-setup-on-travis-ci
+
+# .travis.yml
+language: ruby
+rvm:
+ - 2.2.5
+ # - jruby
+ # - rbx-2
+# uncomment and edit the following line if your project needs to run something other than `rake`:
+# script: bundle exec rspec spec
+
+env:
+  # - DB=sqlite
+  # - DB=mysql
+  - DB=postgresql
+
+script:
+  # - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+
+before_script:
+  # - cp config/database.travis.yml config/database.yml
+  # - mysql -e 'create database strano_test'
+  - psql -c 'create database strano_test' -U postgres
+
