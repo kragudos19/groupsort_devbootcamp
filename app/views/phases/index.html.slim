@@ -17,5 +17,5 @@ h1 = @cohort.name
             - i += 1
               / td = student.first_name
 
-
-= link_to "New Phase", 'phases#create', method: :post
+-if @phases.length < 3
+  = link_to "New Phase", 'phases#create', method: :post
