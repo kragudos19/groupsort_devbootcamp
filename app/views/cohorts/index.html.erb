@@ -14,7 +14,7 @@
   <tbody>
     <% @cohorts.each do |cohort| %>
       <tr>
-        <td><%= link_to "#{cohort.name}", cohort %></td>
+        <td><%= link_to "#{cohort.name}", cohort_phases_path(cohort) %></td>
         <td><%= cohort.location %></td>
         <td><%= link_to 'Edit Name', edit_cohort_path(cohort) %></td>
         <td><%= link_to 'Edit Students', cohort_students_path(cohort) %></td>

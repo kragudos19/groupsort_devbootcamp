@@ -1,0 +1,21 @@
+h1 = @cohort.name
+
+- @phases.each do |phase|
+  h3 = "#{phase.class} #{phase.phase_num}"
+  - phase.weeks.each do |week|
+    h5 = "Week " + week.week_number.to_s
+    table
+      thead
+        tr
+      tbody
+        - i = 1
+        -week.groups.each do |group|
+          tr
+            td = "Group " + i.to_s
+            - group.students.each do |student|
+              td = student.first_name
+            - i += 1
+              / td = student.first_name
+
+= link_to "login", new_user_session_path, method: :get
+= link_to "register", new_user_registration_path, method: :get
