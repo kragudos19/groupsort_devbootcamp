@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  phase_num: 1
-  belongs_to: 
-
-two:
-  phase_num: 1
-  belongs_to: 
