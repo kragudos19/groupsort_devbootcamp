@@ -15,10 +15,10 @@ var ready = function() {
     $("#register-form").toggle();
   });
 
-  hideForms()
+  // hideForms()
   // var formShow = false;
-  $("body").on("click", "#Login", loginForm)
-  $("body").on("click", "#Register", regForm)
+  // $("body").on("click", "#Login", loginForm)
+  // $("body").on("click", "#Register", regForm)
 };
 
 $(document).on('turbolinks:load', ready);
