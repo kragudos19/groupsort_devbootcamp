@@ -30,6 +30,8 @@ gem 'devise'
 
 gem 'slim'
 
+gem 'coveralls', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
