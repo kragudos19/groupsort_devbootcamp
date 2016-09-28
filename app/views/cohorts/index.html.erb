@@ -1,8 +1,11 @@
+<div id="cohort-show-container">
+<div id="canvas_1">
+</div>
 <p id="notice"><%= notice %></p>
 
-<h1>Cohorts</h1>
+<h1>COHORTS</h1>
 
-<table>
+<table class="cohort-grouping">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,17 +16,22 @@
 
   <tbody>
     <% @cohorts.each do |cohort| %>
-      <tr>
-        <td><%= link_to "#{cohort.name}", cohort_phases_path(cohort) %></td>
-        <td><%= cohort.location %></td>
-        <td><%= link_to 'Edit Name', edit_cohort_path(cohort) %></td>
-        <td><%= link_to 'Edit Students', cohort_students_path(cohort) %></td>
-        <td><%= link_to 'Remove Cohort', cohort, class: "delete", method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+      <tr class="table-row">
+          <td id="cohort-name"><%= link_to "#{cohort.name}", cohort_phases_path(cohort) %></td>
+
+          <td id="cohort-location"><%= cohort.location %></td>
+          <td><%= link_to 'Edit Name', edit_cohort_path(cohort) %></td>
+          <td><%= link_to 'Edit Students', cohort_students_path(cohort) %></td>
+          <td><%= link_to 'Remove Cohort', cohort, class: "delete", method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
+<<<<<<< HEAD
+<%= link_to 'New Cohort', new_cohort_path %>
+</div>
+=======
 <%= link_to 'New Cohort', new_cohort_path%>
+>>>>>>> master

@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 gem 'slim'
+gem 'bourbon'
+gem 'bitters'
 
 gem 'coveralls', require: false
 

@@ -1,27 +1,30 @@
-<%= form_for(cohort) do |f| %>
-  <% if cohort.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cohort.errors.count, "error") %> prohibited this cohort from being saved:</h2>
+ <div id="canvas_1"> 
+</div>
+  <%= form_for(cohort) do |f| %>
+    <% if cohort.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(cohort.errors.count, "error") %> prohibited this cohort from being saved:</h2>
 
-      <ul>
-      <% cohort.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% cohort.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :location %>
+      <%= f.select :location, [["San Diego", 'San Diego'], ["New York", "New York"],["Chicago", "Chicago"], ["Austin", "Austin"], ["San Francisco", "San Francisco"],["Seattle", "Seattle"], ["Washington DC", "Washington DC"]] %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit  %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.select :location, [["San Diego", 'San Diego'], ["New York", "New York"],["Chicago", "Chicago"], ["Austin", "Austin"], ["San Francisco", "San Francisco"],["Seattle", "Seattle"], ["Washington DC", "Washington DC"]] %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

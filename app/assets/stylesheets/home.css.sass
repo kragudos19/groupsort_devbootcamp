@@ -1,0 +1,109 @@
+=cover-background($img-uri, $background-top:"center", $background-left:"center", $background-attachment:"fixed")
+  background-image: image-url($img-uri) 
+  background-repeat: no-repeat 
+  top: unquote($background-top)
+  left: unquote($background-left) 
+  position: fixed
+  top: 0
+  min-height: 100%
+  min-width: 1024px
+  z-index: -4
+  width: 100%
+  height: auto
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover  
+
+=font-style
+  font-family: Myriad Pro
+
+=buttons
+  background-color: rgba(19,19,19,1)
+  background: webkit-gradient(#131313, #595959, vertical)
+  color: white
+  border-color: rgba(19,19,19,1)
+
+
+
+
+
+
+
+// BACKGROUND STYLING
+body 
+  height: 760px
+  background-color: transparent!important
+
+html
+  background-color: #efefef
+
+#canvas_1
+  +cover-background('background_1.png')
+  // +image_background(0, 'background_1.png')
+  margin-left: 12%
+
+#canvas_2
+  +cover-background('background_2.png')
+  margin-left: 34%
+
+@media screen and (max-width: 1024px) 
+  #canvas_1,
+  #canvas_2
+
+
+//////////
+// 
+.wrapper-content
+  position: relative
+  display: inline-flex
+  align-items: center
+  align-content: center
+  felx-direction: row
+  flex: none
+  height: auto
+  min-width: 100%
+
+.aligned-containers
+  top: 100px
+  align-self: center
+  padding-left: 10px
+
+
+.quote-box
+  right: 50
+  margin-left: 42%
+  padding-left: 3%
+  padding-top: 520px
+
+.landing-form
+  min-width: 270px
+  flex-grow: 2
+  margin-top: -200px
+
+h3
+  .quote
+  font-family: Myriad Pro
+  min-width: 200px
+  font-size : 22px
+  letter-spacing: 1px
+  line-height: 180%
+  color : #9ed2d2
+  margin-right: 100px
+
+.otext
+  color: #ef5952
+
+h1
+  font-family: Myriad Pro
+  font-style: bold
+  font-color: #17abb5
+
+.form-style
+  width: 800px
+  height: 500px
+  background-color: white
+
+.btn.btn-primary
+  +buttons
+

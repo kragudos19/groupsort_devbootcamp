@@ -28,14 +28,14 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :address => "smtp.sendgrid.net",
-  #   :port => 1025,
-  #   :enable_starttls_auto => true,
-  #   :user_name => 'app57174622@heroku.com',
-  #   :password => 'vypjfxhk1980',
-  #   :authentication => 'plain'
-  # }
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.sendgrid.net",
+    :port => 1025,
+    :enable_starttls_auto => true,
+    :user_name => 'app57174622@heroku.com',
+    :password => 'vypjfxhk1980',
+    :authentication => 'plain'
+  }
 
 
   # Don't care if the mailer can't send.
