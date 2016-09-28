@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.new(email: "a@a.com", password: "qwerty", password_confirmation: "qwerty")
+user.skip_confirmation!
+user.save
 
 def full_cohort
   cohort = Cohort.create(name: "Salamanders", location: "San Diego")
