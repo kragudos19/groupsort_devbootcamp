@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 gem 'slim'
+gem 'bourbon'
+gem 'bitters'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

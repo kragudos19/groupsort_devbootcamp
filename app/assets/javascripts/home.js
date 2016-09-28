@@ -1,4 +1,6 @@
 var ready = function() {
+
+
   $("#login-form").hide();
   $("#register-form").hide();
   var formShow = false;
