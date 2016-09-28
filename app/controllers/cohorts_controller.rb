@@ -15,6 +15,10 @@ class CohortsController < ApplicationController
   # GET /cohorts/new
   def new
     @cohort = Cohort.new
+    respond_to do |format|
+      format.html
+      format.html {render :new}
+    end
   end
 
   # GET /cohorts/1/edit
