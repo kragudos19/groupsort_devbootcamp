@@ -7,7 +7,7 @@ class Phase < ApplicationRecord
   has_many :student_groups, through: :groups
 
   def new_weeks_and_groups(cohort)
-    students = cohort.students
+    students = cohort.students.where(enrollment: 1)
     weeks = [
       Week.create(phase: self, week_number: ((self.phase_num - 1) * 3) + 1),
       Week.create(phase: self, week_number: ((self.phase_num - 1) * 3) + 2),
