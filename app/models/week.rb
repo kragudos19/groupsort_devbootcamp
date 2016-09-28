@@ -8,29 +8,18 @@ class Week < ApplicationRecord
   has_many :students, through: :student_groups
 
   def new_groups(cohort, phase, students)
-    puts "ASDFASDFASDFSDFASDFASDDFASDFASFASDFSAFASDFSAFASDFASDFASDFASDFASDFS"
-    p self
     studentlength = students.length
     groupcount = studentlength/4
     remainder = studentlength%4
     studentlength += 1 if studentlength%4 == 3
-
+    students = students.shuffle
     groups = []
     groupcount.times do
       groups << Group.create(week: self)
     end
-
     assign_groups(groups, students, remainder)
-
   end
 
-  # --------------------REAL REAL REAL REAL!!!!!!!!! ------------------------
-  # def assign_groups(groups)
-  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-
-  # end
-
-  # --------------------MOCK MOCK MOCK MOCK!!!!!!!!! ------------------------
   def assign_groups(groups, students, remainder)
     s = 0
     if remainder == 0

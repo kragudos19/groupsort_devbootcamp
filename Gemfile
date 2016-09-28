@@ -32,13 +32,22 @@ gem 'slim'
 gem 'bourbon'
 gem 'bitters'
 
+gem 'coveralls', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
 end
+
+# Want to run against the master branch? 
+# You'll need to include the dependent RSpec repos as well. Add the following to your Gemfile:
+# %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+#   gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+# end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
