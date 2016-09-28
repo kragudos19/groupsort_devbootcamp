@@ -16,7 +16,17 @@
   background-size: cover  
 
 =font-style
-  font-family : Myriad Pro
+  font-family: Myriad Pro
+
+=buttons
+  background-color: rgba(19,19,19,1)
+  background: webkit-gradient(#131313, #595959, vertical)
+  color: white
+  border-color: rgba(19,19,19,1)
+
+
+
+
 
 
 
@@ -57,7 +67,8 @@ html
 .aligned-containers
   top: 100px
   align-self: center
-  // background-color: yellow
+  padding-left: 10px
+
 
 .quote-box
   right: 50
@@ -68,11 +79,11 @@ html
 .landing-form
   min-width: 270px
   flex-grow: 2
-  margin-top: -360px
+  margin-top: -200px
 
 h3
   .quote
-  +font-style
+  font-family: Myriad Pro
   min-width: 200px
   font-size : 22px
   letter-spacing: 1px
@@ -83,14 +94,16 @@ h3
 .otext
   color: #ef5952
 
+h1
+  font-family: Myriad Pro
+  font-style: bold
+  font-color: #17abb5
 
+.form-style
+  width: 800px
+  height: 500px
+  background-color: white
 
-
-
-
-
-
-
-
-
+.btn.btn-primary
+  +buttons
 
