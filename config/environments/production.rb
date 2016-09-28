@@ -52,6 +52,23 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # FROM STACK OVERFLOW http://stackoverflow.com/questions/8186584/how-do-i-set-up-email-confirmation-with-devise
+  # config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :address => "127.0.0.1",
+  #   :port    => 25,
+  #   :domain  => 'yourdomain.com'
+  # }
+
+
+
+
+
+
+
+
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "groupsort_devbootcamp_#{Rails.env}"
