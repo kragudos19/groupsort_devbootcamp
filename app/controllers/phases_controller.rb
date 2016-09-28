@@ -4,7 +4,9 @@ class PhasesController < ApplicationController
   # GET /phases
   # GET /phases.json
   def index
-    @phases = Phase.all
+    # @phases = Phase.all
+    @cohort = Cohort.find(params[:cohort_id])
+    @phases = @cohort.phases
   end
 
   # GET /phases/1

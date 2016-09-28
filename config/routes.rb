@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   authenticated :user do
     root 'cohorts#index', as: :authenticated_root
 
-
     resources :cohorts do
       resources :phases, only: [:new, :create, :index]
       resources :students, only: [:new, :create, :index]
@@ -26,7 +25,6 @@ Rails.application.routes.draw do
 
     resource :phases, only: [:show, :edit, :delete, :update]
   end
-
 
   root "home#index"
 end

@@ -30,11 +30,8 @@ class StudentsController < ApplicationController
     end
   end
 
-
   def delete
   end
-
-
 
   private
     def student_params
