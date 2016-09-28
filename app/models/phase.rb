@@ -5,6 +5,24 @@ class Phase < ApplicationRecord
   has_many :weeks
   has_many :groups, through: :weeks
   has_many :student_groups, through: :groups
+
+  def new_weeks_and_groups(cohort)
+    students = cohort.students
+    weeks = [
+      Week.create(phase: self, week_number: ((self.phase_num - 1) * 3) + 1),
+      Week.create(phase: self, week_number: ((self.phase_num - 1) * 3) + 2),
+      Week.create(phase: self, week_number: ((self.phase_num - 1) * 3) + 3)
+    ]
+
+    weeks.each do |week|
+      week.new_groups(cohort, self, students)
+    end
+  end
+
+
+
+
+
   private :student_groups, :student_groups=
   has_many :students, through: :student_groups, source: :student
 end

@@ -28,8 +28,13 @@ class PhasesController < ApplicationController
   def create
     p "TTTTTTTTTTTHTHTHTHHTHTHTHHTTTHTHHTHTHTHHTHHTHTHTHTHTHTHHTHTHTHTHTH"
     p params
+    @cohort = Cohort.find(params[:cohort_id])
+    phase_num = @cohort.phases.length + 1
+    @phase = Phase.create(cohort: @cohort, phase_num: phase_num)
+    @phase.new_weeks_and_groups(@cohort)
+    redirect_to :back
 
-    # @phase = Phase.new(phase_params)
+
 
     # respond_to do |format|
     #   if @phase.save
