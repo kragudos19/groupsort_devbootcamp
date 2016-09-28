@@ -46,5 +46,6 @@ def check_new(group_obj, possible_groups)
         group_obj.students << potential_group
         return potential_group
       end
+    end
   end
 end
