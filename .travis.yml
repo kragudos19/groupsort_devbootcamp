@@ -3,7 +3,7 @@
 # .travis.yml
 language: ruby
 rvm:
- - 2.2
+ - 2.2.5
  # - jruby
  # - rbx-2
 # uncomment and edit the following line if your project needs to run something other than `rake`:
@@ -18,7 +18,7 @@ script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rake
-  
+
 before_script:
   - cp config/database.travis.yml config/database.yml
   # - mysql -e 'create database strano_test'
