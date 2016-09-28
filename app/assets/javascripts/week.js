@@ -4,6 +4,10 @@ var ready = function() {
 
 };
 
+function sendWeekData(){
+
+}
+
 function dragAndDrop(){
   var student = $(".student").draggable({
     helper: 'clone'

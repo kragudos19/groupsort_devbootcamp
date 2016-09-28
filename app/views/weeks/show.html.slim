@@ -7,16 +7,7 @@
       - group.students.each do |student|
         tr[id="student#{student.id}" class="student"]
           td = student.first_name
+          .3
 
-
-/ table
-/   tbody
-/     - i = 1
-/     -@week.groups.each do |group|
-/       tr
-/         th[id="group#{group.id}" ] = "Group" + i.to_s
-/         - i += 1
-/         - group.students.each do |student|
-/           td[id="student#{student.id}"] = student.first_name
-/ = button_to "edit group", update_week_path , method: :put
+= button_to "Save Groups", update_week_path, method: :put, class: "editWeek"
 
