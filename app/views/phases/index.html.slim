@@ -3,7 +3,7 @@ h1 = @cohort.name
 - @phases.each do |phase|
   h3 = "#{phase.class} #{phase.phase_num}"
   - phase.weeks.each do |week|
-    h5 = "Week " + week.week_number.to_s
+    h5 = link_to 'Week ' + week.week_number.to_s, week_path(week)
     table
       thead
         tr
@@ -11,7 +11,7 @@ h1 = @cohort.name
         - i = 1
         -week.groups.each do |group|
           tr
-            td = "Group " + i.to_s
+            th = "Group " + i.to_s
             - group.students.each do |student|
               td = student.first_name
             - i += 1
