@@ -23,8 +23,6 @@ Rails.application.routes.draw do
 
     resource :groups, only: [:show, :edit, :delete, :update]
 
-    resource :phases, only: [:show, :edit, :delete, :update]
-
     scope :weeks do
       put '/:id', to: "weeks#update", as: 'update_week'
     end

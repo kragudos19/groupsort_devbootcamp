@@ -26,17 +26,20 @@ class PhasesController < ApplicationController
   # POST /phases
   # POST /phases.json
   def create
-    @phase = Phase.new(phase_params)
+    p "TTTTTTTTTTTHTHTHTHHTHTHTHHTTTHTHHTHTHTHHTHHTHTHTHTHTHTHHTHTHTHTHTH"
+    p params
 
-    respond_to do |format|
-      if @phase.save
-        format.html { redirect_to @phase, notice: 'Phase was successfully created.' }
-        format.json { render :show, status: :created, location: @phase }
-      else
-        format.html { render :new }
-        format.json { render json: @phase.errors, status: :unprocessable_entity }
-      end
-    end
+    # @phase = Phase.new(phase_params)
+
+    # respond_to do |format|
+    #   if @phase.save
+    #     format.html { redirect_to @phase, notice: 'Phase was successfully created.' }
+    #     format.json { render :show, status: :created, location: @phase }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @phase.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /phases/1
